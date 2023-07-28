@@ -13,7 +13,7 @@ export const growthOptions = [
 
 export const riskOptions = [
   { value: 'achievementGuaranteed', label: 'Achievement Guaranteed' },
-  { value: '=70%', label: '70% Risk' },
-  { value: '=30%', label: '30% Risk' },
+  { value: '=70%', label: '70% Possibility' },
+  { value: '=30%', label: '30% Possibility' },
   { value: 'impossible', label: 'Impossible' }
 ];
