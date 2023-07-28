@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ButtonGroup, Button } from '@mui/material';
+import { ButtonGroup, Button, TextField } from '@mui/material';
+import { longShortTermOptions, growthOptions, riskOptions } from './options';
 
 function ActivityForm() {
   const [longShortTerm, setLongShortTerm] = useState(null);
@@ -7,48 +8,40 @@ function ActivityForm() {
   const [risk, setRisk] = useState(null);
 
   const handleLongShortTermClick = (option) => {
-    setLongShortTerm(longShortTerm === option.value ? null : option.value);
+    setLongShortTerm(option);
   };
 
   const handleGrowthClick = (option) => {
-    setGrowth(growth === option.value ? null : option.value);
+    setGrowth(option);
   };
 
   const handleRiskClick = (option) => {
-    setRisk(risk === option.value ? null : option.value);
+    setRisk(option);
   };
-
-  const longShortTermOptions = [
-    { value: 'longTerm', label: 'Long Term' },
-    { value: 'shortTerm', label: 'Short Term' }
-  ];
-
-  const growthOptions = [
-    { value: 'high', label: 'High' },
-    { value: 'medium', label: 'Medium' },
-    { value: 'low', label: 'Low' }
-  ];
-
-  const riskOptions = [
-    { value: 'high', label: 'High' },
-    { value: 'medium', label: 'Medium' },
-    { value: 'low', label: 'Low' }
-  ];
 
   return (
     <div>
       <h2>Activity Form</h2>
 
-      <label htmlFor="activity">Activity:</label>
-      <input type="text" id="activity" name="activity" required />
+      <TextField
+        id="activity"
+        name="activity"
+        label="Activity:"
+        variant="outlined"
+        required
+      />
+      <br />
       <br />
 
-      <label>Long term/Short term:</label>
       <ButtonGroup>
         {longShortTermOptions.map((option) => (
           <Button
             key={option.value}
-            variant={longShortTerm.value === option.value ? 'contained' : 'outlined'}
+            variant={
+              longShortTerm && longShortTerm.value === option.value
+                ? 'contained'
+                : 'outlined'
+            }
             onClick={() => handleLongShortTermClick(option)}
           >
             {option.label}
@@ -56,13 +49,15 @@ function ActivityForm() {
         ))}
       </ButtonGroup>
       <br />
+      <br />
 
-      <label>Growth:</label>
       <ButtonGroup>
         {growthOptions.map((option) => (
           <Button
             key={option.value}
-            variant={growth.value === option.value ? 'contained' : 'outlined'}
+            variant={
+              growth && growth.value === option.value ? 'contained' : 'outlined'
+            }
             onClick={() => handleGrowthClick(option)}
           >
             {option.label}
@@ -70,8 +65,8 @@ function ActivityForm() {
         ))}
       </ButtonGroup>
       <br />
+      <br />
 
-      <label>Risk:</label>
       <ButtonGroup>
         {riskOptions.map((option) => (
           <Button
@@ -84,8 +79,11 @@ function ActivityForm() {
         ))}
       </ButtonGroup>
       <br />
+      <br />
 
-      <button type="submit">Submit</button>
+      <Button type="submit" variant="contained" color="primary">
+        Submit
+      </Button>
     </div>
   );
 }
