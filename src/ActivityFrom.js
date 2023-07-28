@@ -31,6 +31,12 @@ function ActivityForm() {
   };
 
   const handleSubmit = () => {
+    // Check if any of the values are null (none)
+    if (activity === '' || longShortTerm === null || growth === null || risk === null) {
+        alert('Please fill in all the fields.');
+        return; // If any value is none, do not save the entry and return early
+        }
+      
     // Create a new activity entry object
     const newActivityEntry = {
       activity,
