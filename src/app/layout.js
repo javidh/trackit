@@ -11,6 +11,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <meta http-equiv='cache-control' content='no-cache' />
+      <meta http-equiv='expires' content='0' />
+      <meta http-equiv='pragma' content='no-cache' />
       <body className={inter.className}>{children}</body>
     </html>
   )
