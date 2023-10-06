@@ -2,21 +2,23 @@
 
 import styles from './page.module.css'
 import { useEffect, useState } from 'react'
-// const href = 'http://iamjavid.com'
-const href = null
+import { getUrl } from './lib';
 export default function Home() {
 
 
 
   const [message, setMessage] = useState("hello please fill the href variable to be redirected");
+  const [url, setUrl] = useState(null);
+
   useEffect(() => {
-    if (href != null) {
-      setMessage("In a second you'll be redirected to " + href)
+    getUrl().then(u => setUrl(u))
+    if (url != null) {
+      setMessage("In a second you'll be redirected to " + url)
       setTimeout(() => {
-        window.location.replace(href);
+        window.location.replace(url);
       }, 1000)
     }
-  }, [])
+  }, [url])
   return (
       <main className={styles.main}>
         {message}

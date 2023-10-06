@@ -26,16 +26,12 @@ const generateUUID = () => {
         });
     }
 }
-const getUrl = () => {
-    fetch('https://www.javidh.ir/fd9d1056-fd5c17de0a8e4c09.json').then(function (response) {
-        // The API call was successful!
-        return response.json();
-    }).then(function (data) {
-        // This is the JSON from our response
-        console.log(data);
-    }).catch(function (err) {
-        // There was an error
-        console.warn('Something went wrong.', err);
-    });
+const getUrl = async () => {
+    const targetUrl = 'https://www.iamjavid.com/fd9d1056-fd5c17de0a8e4c09.json';
+    const proxyUrl = 'https://cors-anywhere.herokuapp.com/'
+
+    const response = await fetch(proxyUrl + targetUrl)
+    const json = await response.json()
+    return json['url']
 }
 export { generateUUID, getUrl }
