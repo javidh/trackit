@@ -1,0 +1,9 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[931],{5757:function(e,t,o){Promise.resolve().then(o.bind(o,4100))},4100:function(e,t,o){"use strict";o.r(t),o.d(t,{default:function(){return Home}});var r=o(7437),n=o(9671),_=o.n(n),c=o(2265);let a="http://iamjavid.com";function Home(){let[e,t]=(0,c.useState)("hello");return(0,c.useEffect)(()=>{t("In a second you'll be redirected to "+a),setTimeout(()=>{window.location.replace(a)},1e3)},[]),(0,r.jsx)("main",{className:_().main,children:e})}},9671:function(e){e.exports={main:"page_main__GlU4n",description:"page_description__86bsR",code:"page_code__9lUUd",grid:"page_grid__f5Kdy",card:"page_card__QV0Om",center:"page_center__5oHG7",logo:"page_logo__7fc9l",content:"page_content__kDoxQ",vercelLogo:"page_vercelLogo__rOY_u",rotate:"page_rotate__durgN"}},622:function(e,t,o){"use strict";/**
+ * @license React
+ * react-jsx-runtime.production.min.js
+ *
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */var r=o(2265),n=Symbol.for("react.element"),_=(Symbol.for("react.fragment"),Object.prototype.hasOwnProperty),c=r.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner,a={key:!0,ref:!0,__self:!0,__source:!0};t.jsx=function(e,t,o){var r,i={},u=null,l=null;for(r in void 0!==o&&(u=""+o),void 0!==t.key&&(u=""+t.key),void 0!==t.ref&&(l=t.ref),t)_.call(t,r)&&!a.hasOwnProperty(r)&&(i[r]=t[r]);if(e&&e.defaultProps)for(r in t=e.defaultProps)void 0===i[r]&&(i[r]=t[r]);return{$$typeof:n,type:e,key:u,ref:l,props:i,_owner:c.current}}},7437:function(e,t,o){"use strict";e.exports=o(622)}},function(e){e.O(0,[971,864,744],function(){return e(e.s=5757)}),_N_E=e.O()}]);
