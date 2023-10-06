@@ -1,17 +1,21 @@
 {
   "name": "trackit",
+  "homepage": "https://javidh.github.io/trackit",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "predeploy": "npm run build && touch ./out/.nojekyll",
+    "deploy": "gh-pages -d out -t true"
   },
   "dependencies": {
     "react": "^18",
     "react-dom": "^18",
-    "next": "13.5.4"
+    "next": "13.5.4",
+    "gh-pages": "^5.0.0"
   },
   "devDependencies": {
     "eslint": "^8",
